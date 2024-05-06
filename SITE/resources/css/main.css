@@ -103,12 +103,22 @@ button:active {
   border: none;
   border-bottom: 1.5px solid #aaaaaa;
   outline: none;
+  transition: all 0.2s ease;
+}
+.input_box input:focus {
+  border-color: #7d2ae8;
 }
 .input_box i {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
   font-size: 20px;
+  color: #707070;
+}
+.input_box input:focus ~ i.email,
+.input_box input:focus ~ i.password,
+.input_box input:focus ~ i.pw_hide {
+  color: #7d2ae8;
 }
 
 .input_box i.email {
@@ -121,14 +131,46 @@ button:active {
 }
 .input_box i.pw_hide {
   right: 0;
+  font-size: 18px;
   color: #707070;
 }
-.input_box input:focus ~ i.email {
-  color: #0b0217;
+.option_field {
+  margin-top: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
-.input_box input:focus ~ i.password {
-  color: #0b0217;
+.form_container a {
+  color: #7d2ae8;
+  font-size: 12px;
 }
-.input_box input:focus ~ i.pw_hide {
+.form_container a:hover {
+  text-decoration: underline;
+}
+.checkbox {
+  display: flex;
+  white-space: nowrap;
+  font-size: 12px;
+  column-gap: 8px;
+}
+.checkbox label {
   color: #0b0217;
+  cursor: pointer;
+  font-size: 12px;
+  user-select: none;
+}
+.checkbox input {
+  accent-color: #7d2ae8;
+}
+.form_container .button {
+  background: #7d2ae8;
+  margin-top: 30px;
+  width: 100%;
+  padding: 10px 0;
+  border-radius: 10px;
+}
+.login_signup {
+  font-size: 12px;
+  text-align: center;
+  margin-top: 15px;
 }
