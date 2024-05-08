@@ -62,6 +62,21 @@ button:active {
   background-size: cover;
   background-position: center;
 }
+.home::before {
+  content: "";
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.6);
+  z-index: 100;
+  opacity: 0;
+  pointer-events: none;
+  transition: all 0.5s ease-out;
+}
+.home.show::before {
+  opacity: 1;
+  pointer-events: auto;
+}
 /* Form */
 .form_container {
   position: absolute;
@@ -83,6 +98,17 @@ button:active {
   opacity: 1;
   pointer-events: auto;
   transform: translate(-50%, -50%) scale(1);
+}
+
+.signup_form {
+  display: none;
+}
+.form_container.active .signup_form {
+  display: block;
+}
+
+.form_container.active .login_form {
+  display: none;
 }
 
 .signup_form {
@@ -144,7 +170,7 @@ button:active {
 .input_box i.pw_hide {
   right: 0;
   font-size: 18px;
-  color: #707070;
+  cursor: pointer;
 }
 .option_field {
   margin-top: 14px;
